@@ -13,27 +13,22 @@ interface Product {
   image: string;
 }
 
-interface ProductFormatted extends Product {
-  priceFormatted: string;
-}
-
 interface CartItemsAmount {
   [key: number]: number;
 }
 
 const Home = (): JSX.Element => {
-  const [products, setProducts] = useState<ProductFormatted[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const { addProduct, cart } = useCart();
 
-  const cartItemsAmount = cart.reduce((sumAmount, product) => {
-    const newSumTotal = { ...sumAmount };
-    newSumTotal[product.id] = product.amount;
-    return newSumTotal;
+  const cartItemsAmount = cart.reduce((cart, product) => {
+    cart[product.id] = product.amount;
+    return cart;
   }, {} as CartItemsAmount);
 
   useEffect(() => {
     async function loadProducts() {
-      api.get("products").then((response) => setProducts(response.data));  
+      api.get("products").then((response) => setProducts(response.data));
     }
 
     loadProducts();
@@ -41,16 +36,14 @@ const Home = (): JSX.Element => {
 
   function handleAddProduct(id: number) {
     addProduct(id);
+    console.log(id);
   }
 
   return (
     <ProductList>
-      {products.map((product) => ( 
+      {products.map((product) => (
         <li key={product.id}>
-          <img
-            src={product.image}
-            alt={product.title}
-          />
+          <img src={product.image} alt={product.title} />
           <strong>{product.title}</strong>
           <span>{formatPrice(product.price)}</span>
           <button
