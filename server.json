@@ -40,26 +40,26 @@
     },
     {
       "id": 3,
-      "title": "Tênis Adidas Duramo Lite 2.0 Bom para todas as Horas",
-      "price": 219.9,
+      "title": "Tênis Adidas Duramo Lite 2.0 - Bom para todas as Horas",
+      "price": 318.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },
     {
       "id": 5,
       "title": "Tênis VR Caminhada Confortável - Masculino",
-      "price": 139.9,
+      "price": 199.99,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg"
     },
     {
       "id": 6,
       "title": "Tênis Adidas Rocket 2.9 ORIGINAL",
-      "price": 219.9,
+      "price": 189.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },
     {
       "id": 4,
       "title": "Tênis de Corrida Leve e Macio",
-      "price": 179.9,
+      "price": 109.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
     }
   ]
