@@ -33,10 +33,7 @@ const Home = (): JSX.Element => {
 
   useEffect(() => {
     async function loadProducts() {
-      api.get("products").then((response) => setProducts(response.data));
-      
-      ///api.get("products").then((response) => console.log(response.data))
-      
+      api.get("products").then((response) => setProducts(response.data));  
     }
 
     loadProducts();
@@ -65,7 +62,6 @@ const Home = (): JSX.Element => {
               <MdAddShoppingCart size={16} color="#FFF" />
               {cartItemsAmount[product.id] || 0}
             </div>
-              {console.log(product)}
             <span>ADICIONAR AO CARRINHO</span>
           </button>
         </li>
